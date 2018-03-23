@@ -16,6 +16,7 @@ import java.net.ProtocolException;
 import java.net.URL;
 
 import java.util.*;
+import org.json.JSONObject;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         mWeek = (TextView) findViewById(R.id.tv_week);
         mLocation = (TextView) findViewById(R.id.tv_location);
 
+        new DownloadUpdate().execute();
     }
 
 
@@ -78,9 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void btnClick(View view) {
-        mData.setText(getData());
-        mWeek.setText(getWeek());
-        mLocation.setText("Chongqing");
+
         new DownloadUpdate().execute();
     }
 
@@ -90,9 +90,11 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... strings) {
-            String stringUrl = "http://mpianatra.com/Courses/info.txt";
+            String stringUrl= "http://v.juhe.cn/weather/index?format=2&cityname=重庆&key=3f915b0cad6ae92729f8eb1f0446b66d";
             HttpURLConnection urlConnection = null;
             BufferedReader reader;
+            mData.setText(getData());
+            mWeek.setText(getWeek());
 
             try {
                 URL url = new URL(stringUrl);
@@ -123,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
                     return null;
                 }
                 //The temperature
-                return buffer.toString();
+                return buffer.toString().substring(66,68);
 
             } catch (MalformedURLException e) {
                 e.printStackTrace();
