@@ -1,4 +1,4 @@
-package com.example.apple.footprint;
+package com.example.asus.footprint;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.example.apple.footprint;
+package com.example.asus.footprint;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -31,7 +31,6 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     public void imgButtonClick_profile(View view) {
-        Intent intent = new Intent(ProfileActivity.this, ProfileActivity.class);
-        startActivity(intent);
+
     }
 }

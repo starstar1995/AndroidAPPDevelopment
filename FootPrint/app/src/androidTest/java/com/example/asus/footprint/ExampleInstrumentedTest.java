@@ -1,4 +1,4 @@
-package com.example.apple.footprint;
+package com.example.asus.footprint;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.apple.footprint", appContext.getPackageName());
+        assertEquals("com.example.asus.footprint", appContext.getPackageName());
     }
 }
